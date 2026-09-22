@@ -131,4 +131,4 @@ ClassPulse aims to help teachers detect learning gaps earlier, intervene smarter
 iQOO Hackathon — Smart Education
 
 Team: 
-
+APPLE EATERS
