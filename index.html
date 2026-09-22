@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ClassPulse — AI Classroom Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LANDING PAGE -->
+    <section id="landing" class="screen active">
+
+        <nav>
+            <div class="logo">Class<span>Pulse</span></div>
+
+            <div class="nav-tag">
+                AI CLASSROOM INTELLIGENCE
+            </div>
+        </nav>
+
+        <main class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ● SMART EDUCATION
+                </div>
+
+                <h1>
+                    Know when your
+                    <span>classroom is struggling.</span>
+                </h1>
+
+                <p>
+                    ClassPulse uses AI to detect learning gaps and
+                    misconceptions in real time — before the exam does.
+                </p>
+
+                <button onclick="showScreen('dashboard')">
+                    Enter Classroom →
+                </button>
+
+            </div>
+
+            <div class="flow-card">
+
+                <div class="flow-title">
+                    THE LEARNING LOOP
+                </div>
+
+                <div class="flow">
+                    <div>TEACH</div>
+                    <span>→</span>
+                    <div>CHECK</div>
+                    <span>→</span>
+                    <div>DETECT</div>
+                    <span>→</span>
+                    <div>INTERVENE</div>
+                    <span>→</span>
+                    <div>VERIFY</div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- TEACHER DASHBOARD -->
+  <section class="screen" id="dashboard">
+
+    <div class="dashboard-header">
+        <div>
+            <div class="eyebrow">LIVE CLASSROOM</div>
+            <h1>Class 2-B</h1>
+            <p class="muted">42 students connected</p>
+        </div>
+
+        <div class="live-status">
+            <span class="live-dot"></span>
+            LIVE
+        </div>
+    </div>
+
+
+    <!-- AI SCAN CARD -->
+    <div class="ai-scan-card">
+
+        <div class="scan-info">
+            <div class="scan-icon">✦</div>
+
+            <div>
+                <h2>AI Classroom Scan</h2>
+                <p>
+                    Analyze recent student responses to detect
+                    learning gaps and misconceptions.
+                </p>
+            </div>
+        </div>
+
+        <button class="scan-button" id="scanButton" onclick="runClassroomScan()">
+            <span id="scanButtonIcon">✦</span>
+            <span id="scanButtonText">Run AI Classroom Scan</span>
+        </button>
+
+        <!-- SCAN PROGRESS -->
+        <div class="scan-progress-container" id="scanProgress">
+
+            <div class="scan-status" id="scanStatus">
+                Initializing classroom analysis...
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="scan-stats">
+
+                <div>
+                    <strong id="responsesAnalyzed">0</strong>
+                    <span>Responses analyzed</span>
+                </div>
+
+                <div>
+                    <strong id="studentsFlagged">0</strong>
+                    <span>Students flagged</span>
+                </div>
+
+                <div>
+                    <strong id="scanConfidence">0%</strong>
+                    <span>AI confidence</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CLASSROOM HEALTH -->
+    <div class="health-card">
+
+        <div class="health-header">
+            <div>
+                <div class="eyebrow">LEARNING HEALTH</div>
+                <h2>76%</h2>
+            </div>
+
+            <div class="health-ring">
+                <span>76%</span>
+            </div>
+        </div>
+
+        <p class="muted">
+            Overall classroom understanding
+        </p>
+
+    </div>
+
+<!-- TODAY'S CLASS -->
+
+<div class="today-class-card">
+
+    <div class="today-class-header">
+
+        <div>
+            <div class="eyebrow">TODAY'S CLASS</div>
+            <h2>Class overview</h2>
+        </div>
+
+        <span class="today-date">Today · 22 Sep</span>
+
+    </div>
+
+
+    <!-- CLASS STATS -->
+
+    <div class="class-stats">
+
+        <div class="class-stat">
+            <span class="stat-icon">◉</span>
+            <div>
+                <strong>39 / 42</strong>
+                <small>Present</small>
+            </div>
+        </div>
+
+
+        <div class="class-stat">
+            <span class="stat-icon">✓</span>
+            <div>
+                <strong>42 / 42</strong>
+                <small>Quick check</small>
+            </div>
+        </div>
+
+
+        <div class="class-stat">
+            <span class="stat-icon">◒</span>
+            <div>
+                <strong>76%</strong>
+                <small>Learning health</small>
+            </div>
+        </div>
+
+
+        <div class="class-stat support-stat">
+            <span class="stat-icon">!</span>
+            <div>
+                <strong>18</strong>
+                <small>Need support</small>
+            </div>
+        </div>
+
+
+        <div class="class-stat intervention-stat">
+            <span class="stat-icon">↗</span>
+            <div>
+                <strong>12</strong>
+                <small>Interventions</small>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- RECENT ACTIVITY -->
+
+    <div class="activity-section">
+
+        <div class="activity-heading">
+            <span>RECENT CLASS ACTIVITY</span>
+            <span>LIVE</span>
+        </div>
+
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <span class="activity-time">09:00</span>
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-content">
+                    <strong>Python · Recursion</strong>
+                    <small>Lesson started</small>
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span class="activity-time">09:18</span>
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-content">
+                    <strong>Quick assessment completed</strong>
+                    <small>42 responses received</small>
+                </div>
+
+            </div>
+
+
+            <div class="activity-item alert-activity">
+
+                <span class="activity-time">09:20</span>
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-content">
+                    <strong>AI detected a misconception</strong>
+                    <small>18 students affected · 94% confidence</small>
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span class="activity-time">09:22</span>
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-content">
+                    <strong>Rescue Mode launched</strong>
+                    <small>Targeting base-case confusion</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- TOPICS -->
+    <div class="section-heading">
+        <div>
+            <div class="eyebrow">TOPIC MASTERY</div>
+            <h2>What is your class understanding?</h2>
+        </div>
+    </div>
+
+
+    <div class="topic-grid">
+
+        <div class="topic-card strong">
+            <div class="topic-top">
+                <span>Arrays</span>
+                <strong>91%</strong>
+            </div>
+
+            <div class="topic-bar">
+                <div style="width:91%"></div>
+            </div>
+
+            <p>Strong understanding</p>
+        </div>
+
+
+        <div class="topic-card good">
+            <div class="topic-top">
+                <span>Loops</span>
+                <strong>78%</strong>
+            </div>
+
+            <div class="topic-bar">
+                <div style="width:78%"></div>
+            </div>
+
+            <p>Good understanding</p>
+        </div>
+
+
+        <div class="topic-card warning">
+            <div class="topic-top">
+                <span>Functions</span>
+                <strong>63%</strong>
+            </div>
+
+            <div class="topic-bar">
+                <div style="width:63%"></div>
+            </div>
+
+            <p>Needs attention</p>
+        </div>
+
+
+        <div class="topic-card danger">
+
+            <div class="topic-top">
+                <span>Recursion</span>
+                <strong id="recursionScore">38%</strong>
+            </div>
+
+            <div class="topic-bar">
+                <div id="recursionBar" style="width:38%"></div>
+            </div>
+
+            <p id="recursionStatus">Major learning gap</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- AI RESULT -->
+    <div class="ai-result" id="aiResult">
+
+        <div class="result-icon">⚠</div>
+
+        <div class="result-content">
+
+            <div class="eyebrow">AI DETECTION</div>
+
+            <h2>
+                A recurring misconception was detected.
+            </h2>
+
+            <p>
+                ClassPulse identified a pattern in student responses
+                related to recursion.
+            </p>
+
+            <div class="result-details">
+
+                <span>
+                    <strong>18</strong> students affected
+                </span>
+
+                <span>
+                    <strong>Recursion</strong>
+                </span>
+
+                <span>
+                    <strong>94%</strong> confidence
+                </span>
+
+            </div>
+
+        </div>
+
+        <button
+            class="secondary-button"
+            onclick="showScreen('misconception')"
+        >
+            Investigate →
+        </button>
+
+    </div>
+
+</section>
+
+
+    <!-- MISCONCEPTION SCREEN -->
+    <section id="misconception" class="screen">
+
+        <nav>
+            <div class="logo">Class<span>Pulse</span></div>
+
+            <button class="small-btn" onclick="showScreen('dashboard')">
+                ← Dashboard
+            </button>
+        </nav>
+
+        <main class="analysis-page">
+
+            <div class="small-label">AI ANALYSIS</div>
+
+            <h2>
+                A misconception was detected.
+            </h2>
+
+            <p class="subtitle">
+                Topic: <strong>Recursion</strong>
+            </p>
+
+
+            <div class="analysis-grid">
+
+                <div class="misconception-card">
+
+                    <h3>What students are struggling with</h3>
+
+                    <div class="bar-row">
+                        <span>Base case confusion</span>
+                        <strong>47%</strong>
+                    </div>
+
+                    <div class="bar">
+                        <div style="width:47%"></div>
+                    </div>
+
+
+                    <div class="bar-row">
+                        <span>Call stack confusion</span>
+                        <strong>31%</strong>
+                    </div>
+
+                    <div class="bar">
+                        <div style="width:31%"></div>
+                    </div>
+
+
+                    <div class="bar-row">
+                        <span>Syntax errors</span>
+                        <strong>22%</strong>
+                    </div>
+
+                    <div class="bar">
+                        <div style="width:22%"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    <div class="ai-label">
+                        ✦ AI RECOMMENDATION
+                    </div>
+
+                    <h3>
+                        Target the base case first.
+                    </h3>
+
+                    <p>
+                        Students appear to understand recursion
+                        superficially but struggle to identify
+                        when the recursive process should stop.
+                    </p>
+
+                    <button onclick="showScreen('rescue')">
+                        Launch Rescue Mode →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- RESCUE MODE -->
+    <section class="screen" id="rescue">
+
+    <div class="rescue-header">
+        <div>
+            <div class="eyebrow">CLASS RESCUE MODE</div>
+            <h1>Let's recover the concept.</h1>
+            <p class="muted">
+                ClassPulse detected confusion around recursion base cases.
+            </p>
+        </div>
+
+        <div class="rescue-badge">
+            AI-GUIDED INTERVENTION
+        </div>
+    </div>
+
+
+    <!-- STEP INDICATOR -->
+
+    <div class="rescue-steps">
+
+        <div class="rescue-step active" id="stepIndicator1">
+            <span>1</span>
+            <p>Explain</p>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="rescue-step" id="stepIndicator2">
+            <span>2</span>
+            <p>Practice</p>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="rescue-step" id="stepIndicator3">
+            <span>3</span>
+            <p>Challenge</p>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="rescue-step" id="stepIndicator4">
+            <span>4</span>
+            <p>Verify</p>
+        </div>
+
+    </div>
+
+
+    <!-- STEP 1 -->
+
+    <div class="rescue-panel active" id="rescueStep1">
+
+        <div class="panel-label">STEP 1 · VISUAL EXPLANATION</div>
+
+        <h2>What is a recursion base case?</h2>
+
+        <p class="rescue-description">
+            A recursive function needs a condition that tells it when to stop.
+            Without it, the function keeps calling itself.
+        </p>
+
+        <div class="code-visual">
+
+            <div>
+                <span class="code-keyword">factorial</span>(3)
+            </div>
+
+            <div class="code-arrow">↓</div>
+
+            <div>
+                3 × <span class="code-keyword">factorial</span>(2)
+            </div>
+
+            <div class="code-arrow">↓</div>
+
+            <div>
+                2 × <span class="code-keyword">factorial</span>(1)
+            </div>
+
+            <div class="code-arrow">↓</div>
+
+            <div class="base-case">
+                <strong>factorial(0) → 1</strong>
+                <small>BASE CASE — STOP HERE</small>
+            </div>
+
+        </div>
+
+        <button class="primary-button rescue-next" onclick="nextRescueStep(2)">
+            Continue to Practice →
+        </button>
+
+    </div>
+
+
+    <!-- STEP 2 -->
+
+    <div class="rescue-panel" id="rescueStep2">
+
+        <div class="panel-label">STEP 2 · GUIDED PRACTICE</div>
+
+        <h2>Choose the correct base case.</h2>
+
+        <p class="rescue-description">
+            Which condition should stop this recursive factorial function?
+        </p>
+
+        <div class="question-card">
+
+            <div class="code-block">
+                <span>function factorial(n) {</span><br>
+                <span>&nbsp;&nbsp;if (n == <b>?</b>) return 1;</span><br>
+                <span>&nbsp;&nbsp;return n * factorial(n - 1);</span><br>
+                <span>}</span>
+            </div>
+
+            <div class="answer-options">
+
+                <button class="answer-option"
+                    onclick="checkRescueAnswer(this, false)">
+                    <span>A</span> 1
+                </button>
+
+                <button class="answer-option"
+                    onclick="checkRescueAnswer(this, true)">
+                    <span>B</span> 0
+                </button>
+
+                <button class="answer-option"
+                    onclick="checkRescueAnswer(this, false)">
+                    <span>C</span> -1
+                </button>
+
+                <button class="answer-option"
+                    onclick="checkRescueAnswer(this, false)">
+                    <span>D</span> 2
+                </button>
+
+            </div>
+
+            <div class="answer-feedback" id="answerFeedback"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STEP 3 -->
+
+    <div class="rescue-panel" id="rescueStep3">
+
+        <div class="panel-label">STEP 3 · QUICK CHALLENGE</div>
+
+        <h2>Can you predict the result?</h2>
+
+        <p class="rescue-description">
+            What will <strong>factorial(3)</strong> return?
+        </p>
+
+        <div class="challenge-options">
+
+            <button onclick="checkChallenge(this, false)">3</button>
+            <button onclick="checkChallenge(this, true)">6</button>
+            <button onclick="checkChallenge(this, false)">9</button>
+            <button onclick="checkChallenge(this, false)">0</button>
+
+        </div>
+
+        <div class="challenge-feedback" id="challengeFeedback"></div>
+
+    </div>
+
+
+    <!-- STEP 4 -->
+
+    <div class="rescue-panel" id="rescueStep4">
+
+        <div class="panel-label">STEP 4 · RE-ASSESSMENT</div>
+
+        <h2>Concept recovery verified.</h2>
+
+        <p class="rescue-description">
+            The student group was reassessed after the intervention.
+        </p>
+
+        <div class="recovery-result">
+
+            <div class="recovery-number">
+                <span>BEFORE</span>
+                <strong>42%</strong>
+            </div>
+
+            <div class="recovery-arrow">→</div>
+
+            <div class="recovery-number success">
+                <span>AFTER</span>
+                <strong>86%</strong>
+            </div>
+
+            <div class="recovery-gain">
+                +44%
+                <small>CONCEPT RECOVERY</small>
+            </div>
+
+        </div>
+
+        <div class="verification-message">
+            <span>✓</span>
+            ClassPulse verified improved understanding.
+        </div>
+
+        <button class="primary-button" onclick="showScreen('dashboard')">
+            Return to Classroom →
+        </button>
+
+    </div>
+
+</section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
